@@ -22,7 +22,7 @@ bookRoutes.delete("/book", AuthGuard, AuthGuardAdmin, (req, res) =>
   BookControllers.deleteBook(req, res)
 );
 
-// bookRoutes.post("/book/loan", (req, res) => BookControllers.loanBook(req, res));
+bookRoutes.post("/book/loan", AuthGuard, (req, res) => BookControllers.loanBook(req, res));
 bookRoutes.get("/loans/all", AuthGuard, AuthGuardAdmin, (req, res) =>
   BookControllers.viewAllLoans(req, res)
 );
